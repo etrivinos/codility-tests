@@ -1,0 +1,15 @@
+function solution(N) {
+    var binaryNumber = parseInt(N, 10).toString(2);
+	  binaryNumber = binaryNumber.substr(0, binaryNumber.lastIndexOf('1'));
+
+    var binarySplit = binaryNumber.split('1');
+    var longestBinaryGap = 0;
+    
+    for(var i = 0; i < binarySplit.length; i++) {
+        if(binarySplit[i].length > longestBinaryGap) {
+            longestBinaryGap = binarySplit[i].length;
+        }
+    }
+    
+    return longestBinaryGap;
+}
